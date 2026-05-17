@@ -7,7 +7,305 @@
   <title>Soumik Kanti Barua | SQA Engineer</title>
 
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #ffffff;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 28px 8%;
+      position: relative;
+      overflow: hidden;
+      background-image: url("assets/cover.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.30), rgba(15, 23, 42, 0.95)),
+        linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.30));
+      z-index: 0;
+    }
+
+    .navbar,
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+
+    .navbar h2 {
+      color: #38bdf8;
+    }
+
+    .navbar a {
+      margin-left: 24px;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .navbar a:hover {
+      color: #38bdf8;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .profile-image-box {
+      width: 180px;
+      height: 180px;
+      margin-bottom: 28px;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    }
+
+    .profile-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      border: 4px solid #0f172a;
+    }
+
+    .tag {
+      color: #38bdf8;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .hero-text {
+      max-width: 760px;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 10px;
+      margin-right: 12px;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    .primary {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .secondary {
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      background: rgba(15, 23, 42, 0.55);
+    }
+
+    .section {
+      padding: 80px 8%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 34px;
+      margin-bottom: 28px;
+      color: #38bdf8;
+    }
+
+    .section p {
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .card,
+    .timeline-card {
+      background: #1e293b;
+      padding: 26px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .card h3,
+    .timeline-card h3 {
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .timeline-card {
+      margin-bottom: 32px;
+    }
+
+    .timeline-card span {
+      color: #38bdf8;
+      font-weight: bold;
+    }
+
+    .timeline-card h4 {
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+
+    .company-gallery {
+      margin-top: 32px;
+    }
+
+    .gallery-header {
+      margin-bottom: 20px;
+    }
+
+    .gallery-header h4 {
+      color: #38bdf8;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .gallery-header p {
+      color: #94a3b8;
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-grid figure {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .gallery-grid figure:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.5);
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-grid figcaption {
+      padding: 12px 14px;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-links {
+      margin-top: 24px;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      background: #1e293b;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #020617;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: block;
+        margin-bottom: 70px;
+      }
+
+      .navbar div {
+        margin-top: 20px;
+      }
+
+      .navbar a {
+        display: inline-block;
+        margin: 8px 12px 8px 0;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .profile-image-box {
+        width: 150px;
+        height: 150px;
+      }
+
+      .section {
+        padding: 60px 6%;
+      }
+
+      .gallery-grid img {
+        height: 240px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <header class="hero">
@@ -19,11 +317,16 @@
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
 
     <div class="hero-content">
+      <div class="profile-image-box">
+        <img src="assets/profile.png" alt="Soumik Kanti Barua profile picture">
+      </div>
+
       <p class="tag">Software Quality Assurance Engineer</p>
 
       <h1>Building better software through testing, automation, and product quality.</h1>
@@ -35,6 +338,7 @@
 
       <div class="hero-buttons">
         <a href="#projects" class="btn primary">View Projects</a>
+        <a href="assets/Resume_29042026.pdf" class="btn secondary">Download Resume</a>
         <a href="#contact" class="btn secondary">Contact Me</a>
       </div>
     </div>
@@ -45,16 +349,20 @@
 
     <p>
       I am a passionate Software Quality Assurance Engineer with 6+ years of experience
-      across iOS, Android, and Web platforms. I specialize in mobile QA strategy,
-      test planning, API testing, automation testing, cross-device validation,
-      UI/UX validation, and release readiness reporting.
+      across iOS, Android, and Web platforms.
     </p>
 
     <p>
-      I have worked on 30+ live Apple applications, customized Android OS platforms
-      like ColorOS and realmeUI, Android applications, and core banking software.
-      I am known for strong ownership, critical thinking, root cause analysis,
-      and effective cross-functional collaboration.
+      Currently, I lead QA activities for 30+ live Apple applications in a product-based
+      environment. I have strong experience in mobile QA strategy, test planning, API testing,
+      automation testing, cross-device validation, UI/UX validation, and release readiness reporting.
+    </p>
+
+    <p>
+      Previously, I worked on customized Android OS testing for ColorOS and realmeUI,
+      Android applications, and core banking software. I am known for strong ownership,
+      critical thinking, root cause analysis, and close collaboration with developers,
+      product managers, designers, and business teams.
     </p>
   </section>
 
@@ -64,22 +372,22 @@
     <div class="grid">
       <div class="card">
         <h3>Mobile & Web QA</h3>
-        <p>Functional, Regression, Smoke, Sanity, UAT, Black-box, Cross-browser, Cross-device, Compliance, UI/UX validation.</p>
+        <p>End-to-end black-box testing, iOS, Android, web testing, cross-browser testing, cross-device testing, compatibility testing, UI/UX validation, and App Store and Play Store compliance.</p>
       </div>
 
       <div class="card">
-        <h3>Automation & API</h3>
-        <p>Playwright, Selenium with TestNG, Appium for Android and iOS, Postman, API validation, authentication testing.</p>
+        <h3>Automation, API & Load Testing</h3>
+        <p>Playwright, Selenium with TestNG, Appium for Android and iOS, Postman, JMeter, MySQL, and PostgreSQL data validation.</p>
       </div>
 
       <div class="card">
-        <h3>Load & Data Testing</h3>
-        <p>JMeter, MySQL, PostgreSQL, performance validation, data consistency testing, backend workflow validation.</p>
+        <h3>QA Strategy & Process</h3>
+        <p>Test strategy, test planning, RTM, test case design, release readiness reporting, root cause analysis, risk analysis, Agile and Scrum collaboration.</p>
       </div>
 
       <div class="card">
-        <h3>QA Leadership</h3>
-        <p>Test strategy, RTM, test planning, risk analysis, root cause analysis, release readiness reporting, Agile/Scrum.</p>
+        <h3>Tools & Platforms</h3>
+        <p>Jira, Azure DevOps, TestFlight, GitHub, GitHub Actions, Jenkins, QASE, WebRTC, TestTim, Figma, Xcode, Android Studio, and GPT.</p>
       </div>
     </div>
   </section>
@@ -91,30 +399,232 @@
       <span>2023 - Present</span>
       <h3>APPNAP Technologies Ltd</h3>
       <h4>SQA Engineer Level 3</h4>
+
       <p>
-        Leading end-to-end QA strategy and execution for iOS and Web applications
-        in a product-based company with 30+ live Apple apps serving millions of users globally.
+        Leading end-to-end QA strategy and execution for iOS and Web applications in a
+        product-based company with 30+ live Apple apps serving millions of users globally.
       </p>
+
+      <p>
+        Owned UI/UX validation, test planning, API testing, compatibility testing,
+        backend admin panel testing, defect management, release readiness reporting,
+        and mentoring junior QA engineers.
+      </p>
+
+      <div class="company-gallery">
+        <div class="gallery-header">
+          <h4>Appnap Moments</h4>
+          <p>Professional, team, event, and company culture moments from APPNAP Technologies Ltd.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure>
+            <img src="assets/appnap/appnap-welcome.jpg" alt="Welcome moment at Appnap">
+            <figcaption>Welcome to the team</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-award.jpg" alt="Appnap recognition moment">
+            <figcaption>Team recognition</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-trophy.jpg" alt="Appnap trophy moment">
+            <figcaption>Achievement moment</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-team-cinema.jpg" alt="Appnap team outing">
+            <figcaption>Team outing</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-boat-tour.jpg" alt="Appnap boat tour">
+            <figcaption>Team tour</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-hiking.jpg" alt="Appnap hiking moment">
+            <figcaption>Travel memory</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-pitha-utshob.jpg" alt="Appnap Pitha Utshob">
+            <figcaption>Pitha Utshob 2025</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-football.jpg" alt="Appnap football event">
+            <figcaption>Football event</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-tour-group.jpg" alt="Appnap team tour group photo">
+            <figcaption>Team tour</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-denim-tour.jpg" alt="Appnap denim tour group photo">
+            <figcaption>Company tour</figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
 
     <div class="timeline-card">
       <span>2022 - 2023</span>
       <h3>LEADS Corporation Limited</h3>
       <h4>Software Test Engineer</h4>
+
       <p>
         Worked on core banking and enterprise software including Bankultimus,
-        Xchecker, FSIBL Cloud, and Cheqemate. Used Azure DevOps, Selenium, and JMeter.
+        Xchecker, FSIBL Cloud, and Cheqemate.
       </p>
+
+      <p>
+        Participated in requirement analysis, test planning, automation scripting using Selenium
+        and JMeter, Azure DevOps bug tracking, release notes, and Agile Scrum activities.
+      </p>
+
+      <div class="company-gallery">
+        <div class="gallery-header">
+          <h4>LEADS Corporation Moments</h4>
+          <p>Office, team, and work memories from LEADS Corporation Limited.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure>
+            <img src="assets/leads/leads-office-building.jpg" alt="LEADS Corporation office building">
+            <figcaption>Office building</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-vaccine-gift.jpg" alt="LEADS Corporation team ceremony">
+            <figcaption>Team ceremony</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-welcome-gift.jpg" alt="LEADS welcome gift moment">
+            <figcaption>Welcome moment</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-team-selfie.jpg" alt="LEADS team selfie">
+            <figcaption>Team selfie</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-office-team.jpg" alt="LEADS office team">
+            <figcaption>Office team</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-colleagues.jpg" alt="LEADS colleagues">
+            <figcaption>Colleagues</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-rooftop-team.jpg" alt="LEADS rooftop team moment">
+            <figcaption>Rooftop team moment</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-event-team.jpg" alt="LEADS team event">
+            <figcaption>Team event</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-office-group.jpg" alt="LEADS office group photo">
+            <figcaption>Office group</figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
 
     <div class="timeline-card">
       <span>2020 - 2022</span>
       <h3>OPPO & realme Bangladesh</h3>
       <h4>R&D Engineer, QA</h4>
+
       <p>
-        Tested ColorOS, realmeUI, Camera, Music, Settings, and other smartphone OS features.
-        Reported, reproduced, verified, and tracked bugs using WebRTC and ALM systems.
+        Tested smartphone operating system features including ColorOS, realmeUI, Camera,
+        Music, Settings, Otrans, and other Android application modules.
       </p>
+
+      <p>
+        Executed field test cases, prepared test reports, handled market feedback issues,
+        reproduced and verified bugs, and communicated with China HQ developers through
+        WebRTC and ALM systems.
+      </p>
+
+      <div class="company-gallery">
+        <div class="gallery-header">
+          <h4>OPPO & realme Moments</h4>
+          <p>R&D, team, event, and office memories from OPPO & realme Bangladesh.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure>
+            <img src="assets/oppo-realme/oppo-realme-sign.jpg" alt="OPPO and realme office sign photo">
+            <figcaption>OPPO realme office</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-team-night.jpg" alt="OPPO and realme team night">
+            <figcaption>Team night moment</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-red-envelope.jpg" alt="OPPO and realme team event">
+            <figcaption>Team event</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-office-work.jpg" alt="OPPO and realme office work setup">
+            <figcaption>Office work setup</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-dinner-selfie.jpg" alt="OPPO and realme dinner selfie">
+            <figcaption>Dinner selfie</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-dinner-team.jpg" alt="OPPO and realme dinner team">
+            <figcaption>Team dinner</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-restaurant-team.jpg" alt="OPPO and realme restaurant team moment">
+            <figcaption>Restaurant team moment</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-office-celebration.jpg" alt="OPPO and realme office celebration">
+            <figcaption>Office celebration</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-eid-team.jpg" alt="OPPO and realme Eid team photo">
+            <figcaption>Eid team moment</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-cinema-team.jpg" alt="OPPO and realme cinema team outing">
+            <figcaption>Team outing</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-sports-club.jpg" alt="OPPO and realme sports club">
+            <figcaption>Sports club event</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-cake-celebration.jpg" alt="OPPO and realme cake celebration">
+            <figcaption>Cake celebration</figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -124,7 +634,7 @@
     <div class="grid">
       <div class="card">
         <h3>Mobile App QA Portfolio</h3>
-        <p>QA execution for 30+ iOS apps including UI/UX validation, API testing, compatibility testing, and release reporting.</p>
+        <p>End-to-end QA execution for 30+ iOS apps including functional testing, UI/UX validation, API testing, compatibility testing, and release readiness reporting.</p>
       </div>
 
       <div class="card">
@@ -134,7 +644,7 @@
 
       <div class="card">
         <h3>Core Banking QA</h3>
-        <p>Tested banking workflows, business rules, regression flows, and release-critical modules.</p>
+        <p>Tested banking workflows, business rules, regression flows, financial modules, and release-critical features.</p>
       </div>
 
       <div class="card">
@@ -144,7 +654,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="education" class="section">
     <h2>Education</h2>
 
     <div class="grid">
@@ -157,41 +667,45 @@
       <div class="card">
         <h3>HSC in Science</h3>
         <p>Dhaka College</p>
-        <p>GPA: 5.00 | 2014</p>
+        <p>GPA: 5.00 out of 5 | 2014</p>
       </div>
 
       <div class="card">
         <h3>SSC in Science</h3>
         <p>Motijheel Ideal School</p>
-        <p>GPA: 5.00 | 2012</p>
+        <p>GPA: 5.00 out of 5 | 2012</p>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section id="leadership" class="section">
     <h2>Leadership</h2>
 
     <div class="card">
       <h3>Planning and Development Coordinator</h3>
       <p>AIUB Community of Engineering Students</p>
-      <p>Received Leadership Award for club activities, planning, coordination, and contribution.</p>
+      <p>Received Leadership Award from ACES for club activities, planning, coordination, and team contribution.</p>
     </div>
   </section>
 
   <section id="contact" class="section contact">
     <h2>Contact</h2>
 
-    <p>Open to QA, SQA, Automation Testing, Mobile QA, and Software Testing opportunities.</p>
+    <p>
+      Open to Software Quality Assurance, Mobile QA, QA Automation, API Testing,
+      and Software Testing opportunities.
+    </p>
 
     <div class="contact-links">
       <a href="mailto:your-email@example.com">Email</a>
-      <a href="https://github.com/your-github-username">GitHub</a>
+      <a href="https://github.com/Soumik-Kanti">GitHub</a>
       <a href="https://linkedin.com/in/your-linkedin">LinkedIn</a>
+      <a href="assets/Resume_29042026.pdf">Resume</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Soumik Kanti. Built with GitHub Pages.</p>
+    <p>© 2026 Soumik Kanti Barua. Built with GitHub Pages.</p>
   </footer>
 
 </body>
