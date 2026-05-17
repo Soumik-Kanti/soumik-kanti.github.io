@@ -32,9 +32,11 @@ img {
   position: relative;
   overflow: hidden;
 
-  /* Cover image is moved slightly upper and made clearer */
+  /* Cover photo */
   background-image: url("assets/cover.png");
   background-size: cover;
+
+  /* Shows the cover photo slightly upper */
   background-position: center 18%;
   background-repeat: no-repeat;
 }
@@ -44,7 +46,7 @@ img {
   position: absolute;
   inset: 0;
 
-  /* Overlay reduced so cover photo looks more clear */
+  /* Reduced dark overlay so the cover photo looks clearer */
   background:
     linear-gradient(to bottom, rgba(15, 23, 42, 0.12), rgba(15, 23, 42, 0.86)),
     linear-gradient(to right, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.18));
@@ -86,7 +88,7 @@ img {
 }
 
 .profile-image-box {
-  /* Profile picture made much bigger */
+  /* Profile picture made bigger */
   width: 280px;
   height: 280px;
   margin-bottom: 34px;
@@ -100,6 +102,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   border-radius: 50%;
   display: block;
   border: 5px solid #0f172a;
@@ -266,9 +269,40 @@ img {
 
 .gallery-grid img {
   width: 100%;
-  height: 230px;
+  height: 300px;
+
+  /* Good default for team photos */
   object-fit: cover;
+
+  /* Helps faces stay visible instead of cutting from the top */
+  object-position: center top;
+
   display: block;
+  background: #0f172a;
+}
+
+/* Use this class only for very tall or wide photos that must show fully */
+.gallery-grid img.fit-full {
+  object-fit: contain;
+  object-position: center;
+  background: #0f172a;
+}
+
+/* Use these helper classes when a photo needs manual position fixing */
+.gallery-grid img.position-center {
+  object-position: center;
+}
+
+.gallery-grid img.position-bottom {
+  object-position: center bottom;
+}
+
+.gallery-grid img.position-left {
+  object-position: left center;
+}
+
+.gallery-grid img.position-right {
+  object-position: right center;
 }
 
 .gallery-grid figcaption {
@@ -361,6 +395,12 @@ footer {
   }
 
   .gallery-grid img {
-    height: 250px;
+    height: 300px;
+    object-position: center top;
+  }
+
+  .gallery-grid img.fit-full {
+    object-fit: contain;
+    object-position: center;
   }
 }
