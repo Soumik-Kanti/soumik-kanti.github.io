@@ -1,357 +1,1108 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
-  line-height: 1.7;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-}
-
-/* Hero Section */
-
-.hero {
-  min-height: 100vh;
-  padding: 28px 8%;
-  position: relative;
-  overflow: hidden;
-  background-image: url("assets/cover.png");
-  background-size: cover;
-  background-position: center;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.20), rgba(15, 23, 42, 0.96)),
-    linear-gradient(to right, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.35));
-  z-index: 0;
-}
-
-.navbar,
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 90px;
-}
-
-.navbar h2 {
-  color: #38bdf8;
-  font-size: 22px;
-}
-
-.navbar a {
-  margin-left: 24px;
-  color: #cbd5e1;
-  font-size: 14px;
-  transition: color 0.25s ease;
-}
-
-.navbar a:hover {
-  color: #38bdf8;
-}
-
-.hero-content {
-  max-width: 900px;
-}
-
-.profile-image-box {
-  width: 180px;
-  height: 180px;
-  margin-bottom: 28px;
-  border-radius: 50%;
-  padding: 5px;
-  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-  box-shadow: 0 20px 45px rgba(56, 189, 248, 0.25);
-}
-
-.profile-image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  border: 4px solid #0f172a;
-}
-
-.tag {
-  color: #38bdf8;
-  font-weight: bold;
-  margin-bottom: 16px;
-  letter-spacing: 0.3px;
-}
-
-.hero h1 {
-  max-width: 900px;
-  font-size: 56px;
-  line-height: 1.1;
-  margin-bottom: 24px;
-  color: #ffffff;
-}
-
-.hero-text {
-  max-width: 760px;
-  color: #cbd5e1;
-  font-size: 18px;
-}
-
-.hero-buttons {
-  margin-top: 34px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 13px 24px;
-  border-radius: 10px;
-  margin-right: 12px;
-  margin-bottom: 12px;
-  font-weight: bold;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-.primary {
-  background: #38bdf8;
-  color: #020617;
-  box-shadow: 0 14px 30px rgba(56, 189, 248, 0.25);
-}
-
-.secondary {
-  border: 1px solid #38bdf8;
-  color: #38bdf8;
-  background: rgba(15, 23, 42, 0.55);
-}
-
-.secondary:hover {
-  border-color: #7dd3fc;
-}
-
-/* Main Sections */
-
-.section {
-  padding: 80px 8%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.section h2 {
-  font-size: 34px;
-  margin-bottom: 28px;
-  color: #38bdf8;
-}
-
-.section p {
-  color: #cbd5e1;
-  margin-bottom: 16px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 22px;
-}
-
-.card,
-.timeline-card {
-  background: #1e293b;
-  padding: 26px;
-  border-radius: 18px;
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
-}
-
-.card {
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(56, 189, 248, 0.45);
-}
-
-.card h3,
-.timeline-card h3 {
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-.timeline-card {
-  margin-bottom: 32px;
-}
-
-.timeline-card span {
-  color: #38bdf8;
-  font-weight: bold;
-}
-
-.timeline-card h4 {
-  color: #94a3b8;
-  margin-bottom: 12px;
-}
-
-/* Company Photo Gallery */
-
-.company-gallery {
-  margin-top: 32px;
-}
-
-.gallery-header {
-  margin-bottom: 20px;
-}
-
-.gallery-header h4 {
-  color: #38bdf8;
-  font-size: 22px;
-  margin-bottom: 6px;
-}
-
-.gallery-header p {
-  color: #94a3b8;
-  font-size: 15px;
-  margin-bottom: 0;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
-}
-
-.gallery-grid figure {
-  background: rgba(15, 23, 42, 0.75);
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: 18px;
-  overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.gallery-grid figure:hover {
-  transform: translateY(-4px);
-  border-color: rgba(56, 189, 248, 0.5);
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  display: block;
-}
-
-.gallery-grid figcaption {
-  padding: 12px 14px;
-  color: #cbd5e1;
-  font-size: 14px;
-}
-
-/* Contact */
-
-.contact {
-  text-align: center;
-}
-
-.contact-links {
-  margin-top: 24px;
-}
-
-.contact-links a {
-  display: inline-block;
-  margin: 8px;
-  padding: 12px 22px;
-  border-radius: 10px;
-  background: #1e293b;
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  color: #38bdf8;
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.contact-links a:hover {
-  transform: translateY(-3px);
-  border-color: #38bdf8;
-}
-
-/* Footer */
-
-footer {
-  text-align: center;
-  padding: 30px;
-  background: #020617;
-  color: #94a3b8;
-}
-
-/* Mobile Responsive */
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 26px 6% 70px;
-  }
-
-  .navbar {
-    display: block;
-    margin-bottom: 70px;
-  }
-
-  .navbar div {
-    margin-top: 20px;
-  }
-
-  .navbar a {
-    display: inline-block;
-    margin: 8px 12px 8px 0;
-  }
-
-  .profile-image-box {
-    width: 150px;
-    height: 150px;
-  }
-
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .hero-text {
-    font-size: 16px;
-  }
-
-  .section {
-    padding: 60px 6%;
-  }
-
-  .section h2 {
-    font-size: 30px;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-grid img {
-    height: 250px;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Soumik Kanti Barua | SQA Engineer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    /* Hero Section */
+
+    .hero {
+      min-height: 100vh;
+      padding: 28px 8%;
+      position: relative;
+      overflow: hidden;
+      background-image: url("assets/cover.png");
+      background-size: cover;
+      background-position: center 18%;
+      background-repeat: no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.12), rgba(15, 23, 42, 0.86)),
+        linear-gradient(to right, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.18));
+      z-index: 0;
+    }
+
+    .navbar,
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+
+    .navbar h2 {
+      color: #38bdf8;
+      font-size: 22px;
+    }
+
+    .navbar a {
+      margin-left: 24px;
+      color: #cbd5e1;
+      font-size: 14px;
+      transition: color 0.25s ease;
+    }
+
+    .navbar a:hover {
+      color: #38bdf8;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .profile-image-box {
+      width: 280px;
+      height: 280px;
+      margin-bottom: 34px;
+      border-radius: 50%;
+      padding: 7px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      box-shadow: 0 24px 55px rgba(56, 189, 248, 0.32);
+    }
+
+    .profile-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      display: block;
+      border: 5px solid #0f172a;
+    }
+
+    .tag {
+      color: #38bdf8;
+      font-weight: bold;
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      font-size: 56px;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: #ffffff;
+    }
+
+    .hero-text {
+      max-width: 760px;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 10px;
+      margin-right: 12px;
+      margin-bottom: 12px;
+      font-weight: bold;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .primary {
+      background: #38bdf8;
+      color: #020617;
+      box-shadow: 0 14px 30px rgba(56, 189, 248, 0.25);
+    }
+
+    .secondary {
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      background: rgba(15, 23, 42, 0.55);
+    }
+
+    .secondary:hover {
+      border-color: #7dd3fc;
+    }
+
+    /* Main Sections */
+
+    .section {
+      padding: 80px 8%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 34px;
+      margin-bottom: 28px;
+      color: #38bdf8;
+    }
+
+    .section p {
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+
+    .section-intro {
+      max-width: 780px;
+      color: #94a3b8;
+      font-size: 16px;
+      margin-top: -12px;
+      margin-bottom: 26px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .card,
+    .timeline-card {
+      background: #1e293b;
+      padding: 26px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .card {
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+
+    .card h3,
+    .timeline-card h3 {
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .timeline-card {
+      margin-bottom: 32px;
+    }
+
+    .timeline-card span {
+      color: #38bdf8;
+      font-weight: bold;
+    }
+
+    .timeline-card h4 {
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+
+    /* Skills & Capabilities Table */
+
+    .skills-section {
+      max-width: 1240px;
+    }
+
+    .skills-table-wrap {
+      overflow-x: auto;
+      border-radius: 22px;
+      border: 1px solid rgba(56, 189, 248, 0.24);
+      background:
+        linear-gradient(180deg, rgba(30, 41, 59, 0.96), rgba(15, 23, 42, 0.96));
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.24);
+    }
+
+    .skills-table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+
+    .skills-table th {
+      text-align: left;
+      padding: 20px 24px;
+      color: #ffffff;
+      font-size: 15px;
+      letter-spacing: 0.4px;
+      background: rgba(56, 189, 248, 0.12);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .skills-table th:first-child {
+      width: 280px;
+    }
+
+    .skills-table td {
+      padding: 20px 24px;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    .skills-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .skills-table tr {
+      transition: background 0.25s ease;
+    }
+
+    .skills-table tbody tr:hover {
+      background: rgba(56, 189, 248, 0.055);
+    }
+
+    .skill-area {
+      display: inline-block;
+      color: #38bdf8;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tags span {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #dbeafe;
+      font-size: 14px;
+      line-height: 1.3;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .skill-tags span:hover {
+      color: #ffffff;
+      border-color: rgba(56, 189, 248, 0.45);
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    /* Company Photo Gallery */
+
+    .company-gallery {
+      margin-top: 32px;
+    }
+
+    .gallery-header {
+      margin-bottom: 20px;
+    }
+
+    .gallery-header h4 {
+      color: #38bdf8;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .gallery-header p {
+      color: #94a3b8;
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-grid figure {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .gallery-grid figure:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.5);
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      background: #0f172a;
+    }
+
+    .gallery-grid img.fit-full {
+      object-fit: contain;
+      object-position: center;
+      background: #0f172a;
+    }
+
+    .gallery-grid img.position-center {
+      object-position: center;
+    }
+
+    .gallery-grid img.position-bottom {
+      object-position: center bottom;
+    }
+
+    .gallery-grid img.position-left {
+      object-position: left center;
+    }
+
+    .gallery-grid img.position-right {
+      object-position: right center;
+    }
+
+    .gallery-grid figcaption {
+      padding: 12px 14px;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    /* Contact */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-links {
+      margin-top: 24px;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      background: #1e293b;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .contact-links a:hover {
+      transform: translateY(-3px);
+      border-color: #38bdf8;
+    }
+
+    /* Footer */
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #020617;
+      color: #94a3b8;
+    }
+
+    /* Mobile Responsive */
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 26px 6% 70px;
+        background-position: center top;
+      }
+
+      .navbar {
+        display: block;
+        margin-bottom: 70px;
+      }
+
+      .navbar div {
+        margin-top: 20px;
+      }
+
+      .navbar a {
+        display: inline-block;
+        margin: 8px 12px 8px 0;
+      }
+
+      .profile-image-box {
+        width: 210px;
+        height: 210px;
+        margin-bottom: 28px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 60px 6%;
+      }
+
+      .section h2 {
+        font-size: 30px;
+      }
+
+      .section-intro {
+        font-size: 15px;
+        margin-bottom: 22px;
+      }
+
+      .skills-table {
+        min-width: 0;
+      }
+
+      .skills-table,
+      .skills-table thead,
+      .skills-table tbody,
+      .skills-table th,
+      .skills-table td,
+      .skills-table tr {
+        display: block;
+      }
+
+      .skills-table thead {
+        display: none;
+      }
+
+      .skills-table tr {
+        padding: 18px;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+      }
+
+      .skills-table tr:last-child {
+        border-bottom: none;
+      }
+
+      .skills-table td {
+        padding: 0;
+        border-bottom: none;
+      }
+
+      .skills-table td:first-child {
+        margin-bottom: 12px;
+      }
+
+      .skill-area {
+        font-size: 15px;
+      }
+
+      .skill-tags {
+        gap: 8px;
+      }
+
+      .skill-tags span {
+        font-size: 13px;
+        padding: 7px 10px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid img {
+        height: 300px;
+        object-position: center top;
+      }
+
+      .gallery-grid img.fit-full {
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <nav class="navbar">
+      <h2>Soumik Kanti Barua</h2>
+
+      <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <div class="profile-image-box">
+        <img src="assets/profile.png" alt="Soumik Kanti Barua profile picture">
+      </div>
+
+      <p class="tag">Software Quality Assurance Engineer</p>
+
+      <h1>Building better software through testing, automation, and product quality.</h1>
+
+      <p class="hero-text">
+        6+ years of experience across iOS, Android, Web, API, Automation, Load Testing,
+        and cross-platform quality validation. Currently leading QA for 30+ live Apple applications.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="assets/Resume_29042026.pdf" class="btn secondary">Download Resume</a>
+        <a href="#contact" class="btn secondary">Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+
+    <p>
+      I am a passionate Software Quality Assurance Engineer with 6+ years of experience across iOS, Android, Web, API, and OS-level testing. My professional journey includes working on mobile applications, core banking systems, customized Android operating systems, and IoT products, which has given me strong cross-domain QA expertise and a deep understanding of software quality standards.
+    </p>
+
+    <p>
+      Currently, I lead QA activities for 30+ live iOS applications at Appnap Technologies Ltd, including health, communication, and photo-editing products such as Device Tracker, Blood Pressure Monitor, Heart Rate Monitor, and Dazz Cam. I am responsible for test planning, black-box testing, API validation, automation testing using Playwright, Selenium, and Appium, along with ensuring smooth SDLC and STLC implementation throughout the release cycle.
+    </p>
+
+    <p>
+      Previously, I worked at LEADS Corporation Limited, where I contributed to testing core banking solutions including BankUltimus, XChecker, and FSIBL Cloud. My responsibilities included functional testing, database validation, UAT support, and real-world beta testing in multiple banking environments, providing me with valuable exposure to enterprise-level business workflows and customer-focused quality assurance.
+    </p>
+
+    <p>
+      Earlier, I started my career as an R&D Engineer at OPPO and Realme, where I developed a strong QA foundation through extensive OS-level and device testing. My experience included network testing, field testing, compatibility testing, camera and sensor validation, performance testing, stability testing, and IoT device quality assurance for large-scale mobile products.
+    </p>
+
+    <p>
+      I am known for strong ownership, analytical thinking, problem-solving ability, and effective collaboration with developers, designers, product managers, and business teams. I enjoy learning new technologies, improving QA processes, and contributing to reliable, scalable, and high-quality software solutions.
+    </p>
+  </section>
+
+  <section id="skills" class="section skills-section">
+    <h2>Skills &amp; Capabilities</h2>
+
+    <p class="section-intro">
+      A structured overview of my QA capabilities, automation skills, testing tools, and process experience.
+    </p>
+
+    <div class="skills-table-wrap">
+      <table class="skills-table">
+        <thead>
+          <tr>
+            <th>Capability Area</th>
+            <th>Skills / Tools</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><span class="skill-area">Mobile App QA</span></td>
+            <td>
+              <div class="skill-tags">
+                <span>iOS App Testing</span>
+                <span>Android App Testing</span>
+                <span>Cross-device Testing</span>
+                <span>Version Compatibility Testing</span>
+                <span>TestFlight Testing</span>
+                <span>App Store Compliance</span>
+                <span>Play Store Compliance</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="skill-area">Web QA</span></td>
+            <td>
+              <div class="skill-tags">
+                <span>Web Application Testing</span>
+                <span>Cross-browser Testing</span>
+                <span>Responsive Testing</span>
+                <span>Banking Platform Testing</span>
+                <span>E-commerce Testing</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="skill-area">Manual Testing</span></td>
+            <td>
+              <div class="skill-tags">
+                <span>Functional Testing</span>
+                <span>Regression Testing</span>
+                <span>Smoke Testing</span>
+                <span>Sanity Testing</span>
+                <span>UAT Testing</span>
+                <span>Black-box Testing</span>
+                <span>End-to-end Testing</span>
+                <span>UI/UX Validation</span>
+                <span>Figma Mirroring Validation</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="skill-area">Web Automation</span></td>
+            <td>
+              <div class="skill-tags">
+                <span>Selenium</span>
+                <span>Playwright</span>
+                <span>TestNG</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="skill-area">Mobile Automation</span></td>
+            <td>
+              <div class="skill-tags">
+                <span>Appium</span>
+                <span>Android Automation</span>
+                <span>iOS Automation</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="skill-area">API Testing</span></td>
+            <td>
+              <div class="skill-tags">
+                <span>Postman</span>
+                <span>REST API Testing</span>
+                <span>API Response Validation</span>
+                <span>API Data Validation</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="skill-area">Performance Testing</span></td>
+            <td>
+              <div class="skill-tags">
+                <span>JMeter</span>
+                <span>K6</span>
+                <span>Load Testing</span>
+                <span>Performance Validation</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="skill-area">Database Testing</span></td>
+            <td>
+              <div class="skill-tags">
+                <span>MySQL</span>
+                <span>PostgreSQL</span>
+                <span>Data Validation Testing</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="skill-area">QA Process &amp; Leadership</span></td>
+            <td>
+              <div class="skill-tags">
+                <span>Test Strategy</span>
+                <span>Test Planning</span>
+                <span>Test Case Design</span>
+                <span>Test Execution</span>
+                <span>Root Cause Analysis</span>
+                <span>Risk Analysis</span>
+                <span>Release Readiness Reporting</span>
+                <span>Agile Collaboration</span>
+                <span>Scrum Collaboration</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="skill-area">Bug Tracking &amp; Test Management</span></td>
+            <td>
+              <div class="skill-tags">
+                <span>Jira</span>
+                <span>Azure DevOps</span>
+                <span>QASE</span>
+                <span>Testim</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="skill-area">Development &amp; CI/CD Tools</span></td>
+            <td>
+              <div class="skill-tags">
+                <span>GitHub</span>
+                <span>GitHub Actions</span>
+                <span>CI/CD Workflows</span>
+                <span>Jenkins</span>
+                <span>Xcode</span>
+                <span>Android Studio</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="skill-area">Collaboration &amp; Specialized Tools</span></td>
+            <td>
+              <div class="skill-tags">
+                <span>Figma</span>
+                <span>GPT</span>
+                <span>WebRTC</span>
+                <span>Product Quality Validation</span>
+                <span>Critical Thinking Based QA</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <h2>Experience</h2>
+
+    <div class="timeline-card">
+      <span>2023 - Present</span>
+      <h3>APPNAP Technologies Ltd</h3>
+      <h4>SQA Engineer Level 3</h4>
+
+      <p>
+        Leading end-to-end QA strategy and execution for iOS and Web applications in a
+        product-based company with 30+ live Apple apps serving millions of users globally.
+      </p>
+
+      <p>
+        Owned UI/UX validation, test planning, API testing, compatibility testing,
+        backend admin panel testing, defect management, release readiness reporting,
+        and mentoring junior QA engineers.
+      </p>
+
+      <div class="company-gallery">
+        <div class="gallery-header">
+          <h4>Appnap Moments</h4>
+          <p>Professional, team, event, and company culture moments from APPNAP Technologies Ltd.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure>
+            <img src="assets/appnap/appnap-welcome.jpg" alt="Welcome moment at Appnap">
+            <figcaption>Welcome to the team</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-award.jpg" alt="Appnap recognition moment">
+            <figcaption>Team recognition</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-trophy.jpg" alt="Appnap trophy moment">
+            <figcaption>Achievement moment</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-team-cinema.jpg" alt="Appnap team outing">
+            <figcaption>Team outing</figcaption>
+          </figure>
+
+          <figure>
+            <img class="fit-full" src="assets/appnap/appnap-boat-tour.JPG" alt="Appnap boat tour">
+            <figcaption>Team tour</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-hiking.jpg" alt="Appnap hiking moment">
+            <figcaption>Travel memory</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-pitha-utshob.jpg" alt="Appnap Pitha Utshob">
+            <figcaption>Pitha Utshob 2025</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-football.jpg" alt="Appnap football event">
+            <figcaption>Football event</figcaption>
+          </figure>
+
+          <figure>
+            <img class="fit-full" src="assets/appnap/appnap-tour-group.jpg" alt="Appnap team tour group photo">
+            <figcaption>Team tour</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/appnap/appnap-denim-tour.jpg" alt="Appnap denim tour group photo">
+            <figcaption>Company tour</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-card">
+      <span>2022 - 2023</span>
+      <h3>LEADS Corporation Limited</h3>
+      <h4>Software Test Engineer</h4>
+
+      <p>
+        Worked on core banking and enterprise software including Bankultimus,
+        Xchecker, FSIBL Cloud, and Cheqemate.
+      </p>
+
+      <p>
+        Participated in requirement analysis, test planning, automation scripting using Selenium
+        and JMeter, Azure DevOps bug tracking, release notes, and Agile Scrum activities.
+      </p>
+
+      <div class="company-gallery">
+        <div class="gallery-header">
+          <h4>LEADS Corporation Moments</h4>
+          <p>Office, team, and work memories from LEADS Corporation Limited.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure>
+            <img class="fit-full" src="assets/leads/leads-office-building.jpg" alt="LEADS Corporation office building">
+            <figcaption>Office building</figcaption>
+          </figure>
+
+          <figure>
+            <img class="fit-full" src="assets/leads/leads-vaccine-gift.webp" alt="LEADS Corporation team ceremony">
+            <figcaption>Team ceremony</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-welcome-gift.jpg" alt="LEADS welcome gift moment">
+            <figcaption>Welcome moment</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-team-selfie.jpg" alt="LEADS team selfie">
+            <figcaption>Team selfie</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-office-team.jpg" alt="LEADS office team">
+            <figcaption>Office team</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-rooftop-team.jpg" alt="LEADS colleagues">
+            <figcaption>Colleagues</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-colleagues.jpg" alt="LEADS rooftop team moment">
+            <figcaption>Rooftop team moment</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/leads/leads-event-team.jpg" alt="LEADS team event">
+            <figcaption>Team event</figcaption>
+          </figure>
+
+          <figure>
+            <img class="fit-full" src="assets/leads/leads-office-group.jpg" alt="LEADS office group photo">
+            <figcaption>Office group</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-card">
+      <span>2020 - 2022</span>
+      <h3>OPPO &amp; realme Bangladesh</h3>
+      <h4>R&amp;D Engineer, QA</h4>
+
+      <p>
+        Tested smartphone operating system features including ColorOS, realmeUI, Camera,
+        Music, Settings, Otrans, and other Android application modules.
+      </p>
+
+      <p>
+        Executed field test cases, prepared test reports, handled market feedback issues,
+        reproduced and verified bugs, and communicated with China HQ developers through
+        WebRTC and ALM systems.
+      </p>
+
+      <div class="company-gallery">
+        <div class="gallery-header">
+          <h4>OPPO &amp; realme Moments</h4>
+          <p>R&amp;D, team, event, and office memories from OPPO &amp; realme Bangladesh.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure>
+            <img src="assets/oppo-realme/oppo-realme-sign.jpg" alt="OPPO and realme office sign photo">
+            <figcaption>OPPO realme office</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-team-night.jpg" alt="OPPO and realme team night">
+            <figcaption>Team night moment</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-red-envelope.jpg" alt="OPPO and realme team event">
+            <figcaption>Team event</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-office-work.jpg" alt="OPPO and realme office work setup">
+            <figcaption>Office work setup</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-dinner-selfie.jpg" alt="OPPO and realme dinner selfie">
+            <figcaption>Dinner selfie</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-dinner-team.jpg" alt="OPPO and realme dinner team">
+            <figcaption>Team dinner</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-restaurant-team.jpg" alt="OPPO and realme restaurant team moment">
+            <figcaption>Restaurant team moment</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-office-celebration.jpg" alt="OPPO and realme office celebration">
+            <figcaption>Office celebration</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-eid-team.jpg" alt="OPPO and realme Eid team photo">
+            <figcaption>Eid team moment</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-cinema-team.jpg" alt="OPPO and realme cinema team outing">
+            <figcaption>Team outing</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-sports-club.jpg" alt="OPPO and realme sports club">
+            <figcaption>Sports club event</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/oppo-realme/oppo-cake-celebration.jpg" alt="OPPO and realme cake celebration">
+            <figcaption>Cake celebration</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Mobile App QA Portfolio</h3>
+        <p>End-to-end QA execution for 30+ iOS apps including functional testing, UI/UX validation, API testing, compatibility testing, and release readiness reporting.</p>
+      </div>
+
+      <div class="card">
+        <h3>Automation Testing</h3>
+        <p>Automated critical flows for Amarpet, InnovationKit, and Robodoc using Selenium and TestNG.</p>
+      </div>
+
+      <div class="card">
+        <h3>Core Banking QA</h3>
+        <p>Tested banking workflows, business rules, regression flows, financial modules, and release-critical features.</p>
+      </div>
+
+      <div class="card">
+        <h3>Vehicle License Plate Detection</h3>
+        <p>Image processing and Arduino-based parking automation system using Java, OCR, Arduino, and Proteus.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <h2>Education</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>BSc in Computer Engineering</h3>
+        <p>American International University-Bangladesh</p>
+        <p>CGPA: 3.09 | 2019</p>
+      </div>
+
+      <div class="card">
+        <h3>HSC in Science</h3>
+        <p>Dhaka College</p>
+        <p>GPA: 5.00 out of 5 | 2014</p>
+      </div>
+
+      <div class="card">
+        <h3>SSC in Science</h3>
+        <p>Motijheel Ideal School</p>
+        <p>GPA: 5.00 out of 5 | 2012</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership" class="section">
+    <h2>Leadership</h2>
+
+    <div class="card">
+      <h3>Planning and Development Coordinator</h3>
+      <p>AIUB Community of Engineering Students</p>
+      <p>Received Leadership Award from ACES for club activities, planning, coordination, and team contribution.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+
+    <p>
+      Open to Software Quality Assurance, Mobile QA, QA Automation, API Testing,
+      and Software Testing opportunities.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:your-email@example.com">Email</a>
+      <a href="https://github.com/Soumik-Kanti">GitHub</a>
+      <a href="https://linkedin.com/in/your-linkedin">LinkedIn</a>
+      <a href="assets/Resume_29042026.pdf">Resume</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Soumik Kanti Barua. Built with GitHub Pages.</p>
+  </footer>
+
+</body>
+</html>
