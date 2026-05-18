@@ -31,12 +31,8 @@ img {
   padding: 28px 8%;
   position: relative;
   overflow: hidden;
-
-  /* Cover photo */
   background-image: url("assets/cover.png");
   background-size: cover;
-
-  /* Shows the cover photo slightly upper */
   background-position: center 18%;
   background-repeat: no-repeat;
 }
@@ -45,12 +41,9 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-
-  /* Reduced dark overlay so the cover photo looks clearer */
   background:
     linear-gradient(to bottom, rgba(15, 23, 42, 0.12), rgba(15, 23, 42, 0.86)),
     linear-gradient(to right, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.18));
-
   z-index: 0;
 }
 
@@ -88,7 +81,6 @@ img {
 }
 
 .profile-image-box {
-  /* Profile picture made bigger */
   width: 280px;
   height: 280px;
   margin-bottom: 34px;
@@ -182,6 +174,16 @@ img {
   margin-bottom: 16px;
 }
 
+.section-intro {
+  max-width: 780px;
+  color: #94a3b8;
+  font-size: 16px;
+  margin-top: -12px;
+  margin-bottom: 26px;
+}
+
+/* Card Grid */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -226,104 +228,10 @@ img {
   margin-bottom: 12px;
 }
 
-/* Company Photo Gallery */
-
-.company-gallery {
-  margin-top: 32px;
-}
-
-.gallery-header {
-  margin-bottom: 20px;
-}
-
-.gallery-header h4 {
-  color: #38bdf8;
-  font-size: 22px;
-  margin-bottom: 6px;
-}
-
-.gallery-header p {
-  color: #94a3b8;
-  font-size: 15px;
-  margin-bottom: 0;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
-}
-
-.gallery-grid figure {
-  background: rgba(15, 23, 42, 0.75);
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: 18px;
-  overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.gallery-grid figure:hover {
-  transform: translateY(-4px);
-  border-color: rgba(56, 189, 248, 0.5);
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 300px;
-
-  /* Good default for team photos */
-  object-fit: cover;
-
-  /* Helps faces stay visible instead of cutting from the top */
-  object-position: center top;
-
-  display: block;
-  background: #0f172a;
-}
-
-/* Use this class only for very tall or wide photos that must show fully */
-.gallery-grid img.fit-full {
-  object-fit: contain;
-  object-position: center;
-  background: #0f172a;
-}
-
-/* Use these helper classes when a photo needs manual position fixing */
-.gallery-grid img.position-center {
-  object-position: center;
-}
-
-.gallery-grid img.position-bottom {
-  object-position: center bottom;
-}
-
-.gallery-grid img.position-left {
-  object-position: left center;
-}
-
-.gallery-grid img.position-right {
-  object-position: right center;
-}
-
-.gallery-grid figcaption {
-  padding: 12px 14px;
-  color: #cbd5e1;
-  font-size: 14px;
-}
-
-
 /* Skills & Capabilities Table */
 
 .skills-section {
   max-width: 1240px;
-}
-
-.section-intro {
-  max-width: 780px;
-  color: #94a3b8;
-  font-size: 16px;
-  margin-top: -12px;
-  margin-bottom: 26px;
 }
 
 .skills-table-wrap {
@@ -397,12 +305,91 @@ img {
   line-height: 1.3;
   background: rgba(15, 23, 42, 0.72);
   border: 1px solid rgba(148, 163, 184, 0.18);
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
 .skill-tags span:hover {
   color: #ffffff;
   border-color: rgba(56, 189, 248, 0.45);
   background: rgba(56, 189, 248, 0.12);
+}
+
+/* Company Photo Gallery */
+
+.company-gallery {
+  margin-top: 32px;
+}
+
+.gallery-header {
+  margin-bottom: 20px;
+}
+
+.gallery-header h4 {
+  color: #38bdf8;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.gallery-header p {
+  color: #94a3b8;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.gallery-grid figure {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.gallery-grid figure:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  background: #0f172a;
+}
+
+.gallery-grid img.fit-full {
+  object-fit: contain;
+  object-position: center;
+  background: #0f172a;
+}
+
+.gallery-grid img.position-center {
+  object-position: center;
+}
+
+.gallery-grid img.position-bottom {
+  object-position: center bottom;
+}
+
+.gallery-grid img.position-left {
+  object-position: left center;
+}
+
+.gallery-grid img.position-right {
+  object-position: right center;
+}
+
+.gallery-grid figcaption {
+  padding: 12px 14px;
+  color: #cbd5e1;
+  font-size: 14px;
 }
 
 /* Contact */
@@ -484,20 +471,6 @@ footer {
     font-size: 30px;
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-grid img {
-    height: 300px;
-    object-position: center top;
-  }
-
-  .gallery-grid img.fit-full {
-    object-fit: contain;
-    object-position: center;
-  }
-
   .section-intro {
     font-size: 15px;
     margin-bottom: 22px;
@@ -549,5 +522,19 @@ footer {
   .skill-tags span {
     font-size: 13px;
     padding: 7px 10px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 300px;
+    object-position: center top;
+  }
+
+  .gallery-grid img.fit-full {
+    object-fit: contain;
+    object-position: center;
   }
 }
