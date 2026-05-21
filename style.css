@@ -197,6 +197,8 @@ img {
   padding: 80px 8%;
   max-width: 1200px;
   margin: auto;
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
 }
 
 #about {
@@ -551,8 +553,6 @@ img {
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
 }
 
-/* Square generic frame for all gallery photos */
-
 .gallery-grid img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -629,12 +629,43 @@ img {
   font-size: 32px;
   line-height: 38px;
   cursor: pointer;
+  z-index: 10001;
   transition: transform 0.25s ease, background 0.25s ease;
 }
 
 .modal-close:hover {
   transform: scale(1.08);
   background: rgba(56, 189, 248, 0.18);
+}
+
+.modal-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  background: rgba(15, 23, 42, 0.92);
+  color: #ffffff;
+  font-size: 42px;
+  line-height: 42px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.modal-arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+  background: rgba(56, 189, 248, 0.18);
+}
+
+.modal-prev {
+  left: 28px;
+}
+
+.modal-next {
+  right: 28px;
 }
 
 /* Contact */
@@ -741,6 +772,7 @@ footer {
 
   .section {
     padding: 60px 6%;
+    contain-intrinsic-size: 800px;
   }
 
   #about {
@@ -856,5 +888,20 @@ footer {
   .modal-content img {
     max-width: 94vw;
     max-height: 72vh;
+  }
+
+  .modal-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 34px;
+    line-height: 34px;
+  }
+
+  .modal-prev {
+    left: 12px;
+  }
+
+  .modal-next {
+    right: 12px;
   }
 }
